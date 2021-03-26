@@ -8,10 +8,19 @@ int main(int argc, char* argv[]) {
 
     const window win = window("Snake Game", 720, 480);
 
-    win.clear(100, 100, 0);
-    win.update();
+    bool running = true;
+    SDL_Event evn;
 
-    SDL_Delay(3000);
+    while (running) {
+
+        while (SDL_PollEvent(&evn))
+            if (evn.type == SDL_QUIT)
+                running = false;
+
+        win.clear(100, 100, 0);
+        win.update();
+
+    }
 
     SDL_Quit();
     IMG_Quit();
