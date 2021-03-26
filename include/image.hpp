@@ -18,14 +18,6 @@ public:
 		img(nullptr), src(src), des(des),  path(path) {
 		this->img = IMG_LoadTexture(ren, this->path);
 	}
-	image(SDL_Renderer* ren, const image& tex) :
-		img(nullptr), src(tex.get_src()), des(tex.get_des()), path(tex.get_path()) {
-		this->img = IMG_LoadTexture(ren, this->path);
-	}
-	image(SDL_Renderer* ren, const image&& tex) :
-		img(nullptr), src(tex.get_src()), des(tex.get_des()), path(tex.get_path()) {
-		this->img = IMG_LoadTexture(ren, this->path);
-	}
 	virtual ~image() {
 		SDL_DestroyTexture(this->img);
 	}
