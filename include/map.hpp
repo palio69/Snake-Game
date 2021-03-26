@@ -9,7 +9,7 @@
 class map {
 private:
 	std::string lvl;
-	int w, h;
+	int w, h, tw, th;
 
 public:
 	map() :
