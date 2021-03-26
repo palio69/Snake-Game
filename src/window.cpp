@@ -54,6 +54,11 @@ void window::render(const image& img, const map& tile_map) const {
 				des = { x * tw, y * th, tw, th };
 				SDL_RenderCopy(this->ren, img.get_img(), &src, &des);
 
+			} else if (tile == '|') {
+				src = { 8, 0, 8, 8 };
+				des = { x * tw, y * th, tw, th };
+				SDL_RenderCopy(this->ren, img.get_img(), &src, &des);
+
 			}
 
 		}
