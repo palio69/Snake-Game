@@ -12,7 +12,16 @@ private:
 	int w, h;
 
 public:
-	map() { }
+	map() :
+		lvl(""), w(12), h(7) {
+		this->lvl += "............";
+		this->lvl += "............";
+		this->lvl += "............";
+		this->lvl += "............";
+		this->lvl += "............";
+		this->lvl += "............";
+		this->lvl += "............";
+	}
 	~map() { }
 
 	std::string get_lvl() const { return this->lvl; }
