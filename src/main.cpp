@@ -12,6 +12,7 @@ int main(int argc, char* argv[]) {
 	const window win = window("Snake Game", 64 * 12, 64 * 7);
 
 	image sprites = image(win.get_ren(), "res/sprites.png", { 0, 0, 32, 16 }, { 0, 0, 64 * 4, 64 * 2 });
+	map tile_map = map();
 
 	bool running = true;
 	SDL_Event evn;
@@ -23,7 +24,7 @@ int main(int argc, char* argv[]) {
 				running = false;
 
 		win.clear();
-		win.render(sprites);
+		win.render(sprites, tile_map);
 		win.update();
 
 	}

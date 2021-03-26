@@ -22,6 +22,24 @@ void window::render(const image& img) const {
 	SDL_RenderCopy(this->ren, img.get_img(), &src, &des);
 }
 
+void window::render(const image& img, const map& tile_map) const {
+	std::string lvl = tile_map.get_lvl();
+	int tw = tile_map.get_tw(),
+		th = tile_map.get_th();
+	SDL_Rect src, des;
+
+	for (int i = 0; i < lvl.size(); ++i) {
+
+		if (lvl[i] == '.') {
+			src = { 16, 16, 31, 31 };
+			des = { i * tw, i * th, tw, th };
+			SDL_RenderCopy(this->ren, img.get_img(), &src, &des);
+
+		}
+
+	}
+}
+
 void window::update() const {
 	SDL_RenderPresent(this->ren);
 }
