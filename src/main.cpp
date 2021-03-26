@@ -1,12 +1,15 @@
+#include <iostream>
 #include <SDL2/SDL.h>
 #include <SDL2/SDL.h>
+#include <image.hpp>
+#include <map.hpp>
 #include <window.hpp>
 
 int main(int argc, char* argv[]) {
 	SDL_Init(SDL_INIT_VIDEO);
 	IMG_Init(IMG_INIT_PNG);
 
-	const window win = window("Snake Game", 720, 480);
+	const window win = window("Snake Game", 64 * 12, 64 * 7);
 
 	image sprites = image(win.get_ren(), "res/sprites.png", { 0, 0, 32, 16 }, { 0, 0, 64 * 4, 64 * 2 });
 
