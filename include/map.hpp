@@ -13,7 +13,7 @@ private:
 
 public:
 	map() :
-		lvl(""), w(12), h(7) {
+		lvl(""), w(12), h(7), tw(64), th(64) {
 		this->lvl += "............";
 		this->lvl += "............";
 		this->lvl += "............";
@@ -27,5 +27,7 @@ public:
 	std::string get_lvl() const { return this->lvl; }
 	int get_w() const { return this->w; }
 	int get_h() const { return this->h; }
+	int get_tw() const { return this->tw; }
+	int get_th() const { return this->th; }
 
 };
