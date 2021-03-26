@@ -15,4 +15,8 @@ public:
 	map() { }
 	~map() { }
 
+	std::string get_lvl() const { return this->lvl; }
+	int get_w() const { return this->w; }
+	int get_h() const { return this->h; }
+
 };
