@@ -8,6 +8,8 @@ int main(int argc, char* argv[]) {
 
 	const window win = window("Snake Game", 720, 480);
 
+	image sprites = image(win.get_ren(), "res/sprites.png", { 0, 0, 32, 16 }, { 0, 0, 64 * 4, 64 * 2 });
+
 	bool running = true;
 	SDL_Event evn;
 
@@ -17,7 +19,8 @@ int main(int argc, char* argv[]) {
 			if (evn.type == SDL_QUIT)
 				running = false;
 
-		win.clear(100, 100, 0);
+		win.clear();
+		win.render(sprites);
 		win.update();
 
 	}
