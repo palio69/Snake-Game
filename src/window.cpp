@@ -23,20 +23,30 @@ void window::render(const image& img) const {
 }
 
 void window::render(const image& img, const map& tile_map) const {
-	std::string lvl = tile_map.get_lvl();
-	int w = tile_map.get_w(),
+	const std::string lvl = tile_map.get_lvl();
+	char tile;
+
+	const int w = tile_map.get_w(),
 		h = tile_map.get_h(),
 		tw = tile_map.get_tw(),
 		th = tile_map.get_th();
+
 	SDL_Rect src, des;
 
 	for (int y = 0; y < h; ++y) {
 
 		for (int x = 0; x < w; ++x) {
+			src = { 8, 8, 8, 8 };
+			des = { x * tw, y * th, tw, th };
+			SDL_RenderCopy(this->ren, img.get_img(), &src, &des);
 
-			if (lvl[y * w + x] == '.') {
-				src = { 8, 8, 8, 8 };
-				des = { x * 64, y * 64, 64, 64 };
+
+
+			tile = lvl[y * w + x];
+
+			if (tile == 'O') {
+				src = { 0, 8, 8, 8 };
+				des = { x * tw, y * th, tw, th };
 				SDL_RenderCopy(this->ren, img.get_img(), &src, &des);
 
 			}

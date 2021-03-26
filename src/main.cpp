@@ -1,6 +1,6 @@
 #include <iostream>
 #include <SDL2/SDL.h>
-#include <SDL2/SDL.h>
+#include <SDL2/SDL_image.h>
 #include <image.hpp>
 #include <map.hpp>
 #include <window.hpp>
