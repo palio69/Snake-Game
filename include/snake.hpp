@@ -14,7 +14,9 @@ private:
 	std::vector<vec2f> pos;
 
 public:
-	snake() { }
+	snake(SDL_Renderer* ren) :
+		spr(ren, "res/sprites.png", { 0, 0, 32, 16 }, { 0, 0, 64 * 4, 64 * 2 } ),
+		pos( { vec2f(2, 0), vec2f(1, 0), vec2f(0, 0) } ) { }
 	~snake() { }
 
 };
