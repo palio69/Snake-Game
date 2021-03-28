@@ -30,4 +30,6 @@ public:
 	int get_tw() const { return this->tw; }
 	int get_th() const { return this->th; }
 
+	void set_lvl(const std::string lvl) { this->lvl = lvl; }
+
 };
