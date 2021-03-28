@@ -2,6 +2,7 @@
 
 
 
+#include <vector>
 #include <SDL2/SDL.h>
 #include <vec2f.hpp>
 #include <image.hpp>
