@@ -11,13 +11,16 @@
 
 class snake {
 private:
-	image spr;
+	image* spr;
 	std::vector<vec2f> pos;
 
 public:
 	snake(SDL_Renderer* ren) :
-		spr(ren, "res/sprites.png", { 0, 0, 32, 16 }, { 0, 0, 64 * 4, 64 * 2 } ),
+		spr(new image(ren, "res/sprites.png", { 0, 0, 32, 16 }, { 0, 0, 64 * 4, 64 * 2 })),
 		pos( { vec2f(2, 0), vec2f(1, 0), vec2f(0, 0) } ) { }
 	~snake() { }
+
+	image* get_spr() const { return this->spr; }
+	vec2f get_pos(unsigned index) { return this->pos[i]; }
 
 };
