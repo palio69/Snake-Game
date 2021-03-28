@@ -3,6 +3,7 @@
 #include <SDL2/SDL_image.h>
 #include <image.hpp>
 #include <map.hpp>
+#include <snake.hpp>
 #include <window.hpp>
 
 
@@ -13,7 +14,8 @@ int main(int argc, char* argv[]) {
 
 	const window win = window("Snake Game", 64 * 12, 64 * 7);
 
-	image sprites = image(win.get_ren(), "res/sprites.png", { 0, 0, 32, 16 }, { 0, 0, 64 * 4, 64 * 2 });
+	//image sprites = image(win.get_ren(), "res/sprites.png", { 0, 0, 32, 16 }, { 0, 0, 64 * 4, 64 * 2 });
+	snake snk = snake(win.get_ren());
 	map tile_map = map();
 
 	bool running = true;
@@ -26,7 +28,7 @@ int main(int argc, char* argv[]) {
 				running = false;
 
 		win.clear();
-		win.render(sprites, tile_map);
+		win.render(snk, tile_map);
 		win.update();
 
 	}

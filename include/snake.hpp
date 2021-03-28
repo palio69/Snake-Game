@@ -21,6 +21,6 @@ public:
 	~snake() { }
 
 	image* get_spr() const { return this->spr; }
-	vec2f get_pos(unsigned index) { return this->pos[i]; }
+	vec2f get_pos(unsigned i) { return this->pos[i]; }
 
 };

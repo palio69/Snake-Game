@@ -5,6 +5,7 @@
 #include <SDL2/SDL.h>
 #include <image.hpp>
 #include <map.hpp>
+#include <snake.hpp>
 
 
 
@@ -35,7 +36,7 @@ public:
 	void clear(const int r, const int g, const int b, const int a) const;
 
 	void render(const image& img) const;
-	void render(const image& img, const map& tile_map) const;
+	void render(const snake& snk, const map& tile_map) const;
 
 	void update() const;
 
