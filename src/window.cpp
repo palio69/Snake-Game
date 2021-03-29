@@ -40,27 +40,10 @@ void window::render(const snake& snk, const map& tile_map) const {
 			des = { x * tw, y * th, tw, th };
 			SDL_RenderCopy(this->ren, snk.get_spr()->get_img(), &src, &des);
 
-
-
 			tile = lvl[y * w + x];
 
 			if (tile == 'O') {
 				src = { 0, 8, 8, 8 };
-				des = { x * tw, y * th, tw, th };
-				SDL_RenderCopy(this->ren, snk.get_spr()->get_img(), &src, &des);
-
-			} else if (tile == 'A') {
-				src = { 0, 0, 8, 8 };
-				des = { x * tw, y * th, tw, th };
-				SDL_RenderCopy(this->ren, snk.get_spr()->get_img(), &src, &des);
-
-			} else if (tile == '|') {
-				src = { 8, 0, 8, 8 };
-				des = { x * tw, y * th, tw, th };
-				SDL_RenderCopy(this->ren, snk.get_spr()->get_img(), &src, &des);
-
-			} else if (tile == 'Q') {
-				src = { 24, 0, 8, 8 };
 				des = { x * tw, y * th, tw, th };
 				SDL_RenderCopy(this->ren, snk.get_spr()->get_img(), &src, &des);
 
@@ -69,6 +52,19 @@ void window::render(const snake& snk, const map& tile_map) const {
 		}
 
 	}
+
+	for (unsigned i = 0; i < snk.num_pos(); ++i) {
+
+		vec2f pos = snk.get_pos(i);
+		int x = pos.x,
+			y = pos.y;
+
+		src = { 0, 0, 8, 8 };
+		des = { x * tw, y * th, tw, th };
+		SDL_RenderCopy(this->ren, snk.get_spr()->get_img(), &src, &des);
+
+	}
+
 }
 
 void window::update() const {

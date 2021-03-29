@@ -14,7 +14,8 @@ int main(int argc, char* argv[]) {
 
 	const window win = window("Snake Game", 64 * 12, 64 * 7);
 
-	//image sprites = image(win.get_ren(), "res/sprites.png", { 0, 0, 32, 16 }, { 0, 0, 64 * 4, 64 * 2 });
+	int count = 0;
+
 	snake snk = snake(win.get_ren());
 	map tile_map = map();
 
@@ -27,12 +28,18 @@ int main(int argc, char* argv[]) {
 			if (evn.type == SDL_QUIT)
 				running = false;
 
+		std::cout << count << std::endl;
+
+		if (++count == 20) {
+			const Uint8* key = SDL_GetKeyboardState(nullptr);
+			snk.update(key);
+			count = 0;
+
+		}
+
 		win.clear();
 		win.render(snk, tile_map);
 		win.update();
-
-		SDL_Delay(3000);
-		snk.move_y(-1);
 
 	}
 
