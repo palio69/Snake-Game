@@ -1,3 +1,5 @@
+#include <cstdlib>
+#include <ctime>
 #include <iostream>
 #include <SDL2/SDL.h>
 #include <SDL2/SDL_image.h>
@@ -8,16 +10,26 @@
 
 
 
+#define W 24
+#define H 14
+
+#define TW 32
+#define TH 32
+
+
+
 int main(int argc, char* argv[]) {
 	SDL_Init(SDL_INIT_VIDEO);
 	IMG_Init(IMG_INIT_PNG);
 
-	const window win = window("Snake Game", 64 * 12, 64 * 7);
+	std::srand(std::time(nullptr));
+
+	const window win = window("Snake Game", W * TW, H * TH);
 
 	int count = 0;
 
 	snake snk = snake(win.get_ren());
-	map tile_map = map();
+	map tile_map = map(W, H, TW, TH);
 
 	bool running = true;
 	SDL_Event evn;

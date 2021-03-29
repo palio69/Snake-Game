@@ -14,14 +14,12 @@
 class snake {
 private:
 	image* spr;
-	map tile_map;
 	std::vector<vec2f> pos;
 	unsigned dir;
 
 public:
 	snake(SDL_Renderer* ren) :
-		spr(new image(ren, "res/sprites.png", { 0, 0, 32, 16 }, { 0, 0, 64 * 4, 64 * 2 })),
-		tile_map(map()),
+		spr(new image(ren, "res/sprites.png", { 0, 0, 32, 16 }, { 0, 0, 0, 0 })),
 		pos( { vec2f(2, 0), vec2f(1, 0), vec2f(0, 0) } ),
 		dir(2) { }
 	~snake() { }

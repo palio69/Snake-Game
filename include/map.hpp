@@ -2,6 +2,7 @@
 
 
 
+#include <ctime>
 #include <string>
 
 
@@ -12,15 +13,14 @@ private:
 	int w, h, tw, th;
 
 public:
-	map() :
-		lvl(""), w(12), h(7), tw(64), th(64) {
-		this->lvl += "............";
-		this->lvl += "..........O.";
-		this->lvl += "............";
-		this->lvl += "............";
-		this->lvl += "............";
-		this->lvl += "............";
-		this->lvl += "............";
+	map(const int w, const int h, const int tw, const int th) :
+		lvl(""), w(w), h(h), tw(tw), th(th) {
+
+		for (int i = this->w * this->h; i > 0; --i)
+			lvl += '.';
+
+		this->lvl[std::rand() % this->lvl.size()] = 'O';
+
 	}
 	~map() { }
 
