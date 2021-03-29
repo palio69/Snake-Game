@@ -23,14 +23,13 @@ void snake::update(const Uint8* key) {
 	if (dir == 0)
 		pos[0].y -= 1;
 
-	else
+	else if (dir == 1)
 		pos[0].y += 1;
 
-
-	if (dir == 3)
-		pos[0].x -= 1;
+	else if (dir == 2)
+		pos[0].x += 1;
 
 	else
-		pos[0].x += 1;
+		pos[0].x -= 1;
 
 }

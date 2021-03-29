@@ -28,9 +28,7 @@ int main(int argc, char* argv[]) {
 			if (evn.type == SDL_QUIT)
 				running = false;
 
-		std::cout << count << std::endl;
-
-		if (++count == 20) {
+		if (++count == 100) {
 			const Uint8* key = SDL_GetKeyboardState(nullptr);
 			snk.update(key);
 			count = 0;
