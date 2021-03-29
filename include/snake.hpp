@@ -2,6 +2,7 @@
 
 
 
+#include <cstring>
 #include <vector>
 #include <SDL2/SDL.h>
 #include <vec2f.hpp>
@@ -30,3 +31,25 @@ public:
 	void move_y(short move);
 
 };
+
+
+
+inline int find_char(std::string str, const char chr) {
+	unsigned size = str.size();
+	char* txt = new char[size];
+
+	for (unsigned i = 0; i < size; ++i)
+		txt[i] = str[i];
+
+	const char* find = std::strchr(txt, chr);
+	int rtrn;
+
+	if (find == nullptr)
+		rtrn = -1;
+
+	else
+		rtrn = find - txt;
+
+	delete[] txt;
+	return rtrn;
+}
