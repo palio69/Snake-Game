@@ -31,6 +31,9 @@ int main(int argc, char* argv[]) {
 		win.render(snk, tile_map);
 		win.update();
 
+		SDL_Delay(3000);
+		snk.move_y(-1);
+
 	}
 
 	SDL_Quit();
