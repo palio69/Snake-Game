@@ -27,4 +27,6 @@ public:
 	const map& get_tile_map() const { return this->tile_map; }
 	vec2f get_pos(unsigned i) const { return this->pos[i]; }
 
+	void move_y(short move);
+
 };
