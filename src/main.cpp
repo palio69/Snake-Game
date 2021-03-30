@@ -18,6 +18,8 @@
 
 
 
+float get_current_time() { return SDL_GetTicks() / 1000.0f; }
+
 int main(int argc, char* argv[]) {
 	SDL_Init(SDL_INIT_VIDEO);
 	IMG_Init(IMG_INIT_PNG);
@@ -33,6 +35,8 @@ int main(int argc, char* argv[]) {
 
 	bool running = true;
 	SDL_Event evn;
+
+	[[maybe_unused]] float current_time = get_current_time();
 
 	while (running) {
 
