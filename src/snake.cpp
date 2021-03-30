@@ -29,6 +29,7 @@ void snake::update(const Uint8* key, map& tile_map, const float delta_time) {
 
 
 	vec2f old_head = this->pos[0];
+	vec2f tail = this->pos[this->pos.size() - 1];
 
 	if (this->dir == 0)
 		this->pos[0].y -= th;
@@ -53,6 +54,7 @@ void snake::update(const Uint8* key, map& tile_map, const float delta_time) {
 
 	}
 
-	tile_map.new_fruit(this->pos[0]);
+	if (tile_map.new_fruit(this->pos[0]))
+		pos.push_back(tail);
 
 }

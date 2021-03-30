@@ -38,6 +38,6 @@ public:
 
 	void set_lvl(const std::string lvl) { this->lvl = lvl; }
 
-	void new_fruit(const vec2f xy);
+	bool new_fruit(const vec2f xy);
 
 };
