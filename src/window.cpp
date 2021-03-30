@@ -36,14 +36,14 @@ void window::render(const snake& snk, const map& tile_map) const {
 	for (int y = 0; y < h; ++y) {
 
 		for (int x = 0; x < w; ++x) {
-			src = { 8, 8, 8, 8 };
+			src = { 16, 0, 8, 8 };
 			des = { x * tw, y * th, tw, th };
 			SDL_RenderCopy(this->ren, snk.get_spr()->get_img(), &src, &des);
 
 			tile = lvl[y * w + x];
 
 			if (tile == 'O') {
-				src = { 0, 8, 8, 8 };
+				src = { 8, 0, 8, 8 };
 				des = { x * tw, y * th, tw, th };
 				SDL_RenderCopy(this->ren, snk.get_spr()->get_img(), &src, &des);
 
@@ -59,7 +59,7 @@ void window::render(const snake& snk, const map& tile_map) const {
 		int x = pos.x,
 			y = pos.y;
 
-		src = { 8, 0, 8, 8 };
+		src = { 0, 0, 8, 8 };
 		des = { x, y, tw, th };
 		SDL_RenderCopy(this->ren, snk.get_spr()->get_img(), &src, &des);
 

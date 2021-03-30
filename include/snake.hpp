@@ -20,7 +20,7 @@ private:
 
 public:
 	snake(SDL_Renderer* ren, const int tw, const int th) :
-		spr(new image(ren, "res/sprites.png", { 0, 0, 32, 16 }, { 0, 0, 0, 0 })),
+		spr(new image(ren, "res/sprites.png", { 0, 0, 24, 8 }, { 0, 0, 0, 0 })),
 		pos( { vec2f(2 * tw, 0 * th), vec2f(1 * tw, 0 * th), vec2f(0 * tw, 0 * th) } ),
 		tw(tw), th(th),
 		dir(2) { }
