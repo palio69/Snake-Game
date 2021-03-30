@@ -36,9 +36,13 @@ int main(int argc, char* argv[]) {
 	bool running = true;
 	SDL_Event evn;
 
-	[[maybe_unused]] float current_time = get_current_time();
+	float current_time = get_current_time();
 
 	while (running) {
+
+		float new_time = get_current_time();
+		float delta_time = new_time - current_time;
+		current_time = new_time;
 
 		while (SDL_PollEvent(&evn))
 			if (evn.type == SDL_QUIT)
