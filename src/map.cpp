@@ -3,8 +3,7 @@
 
 
 void map::new_fruit(const vec2f xy) {
-	std::pair<int, int> comp = std::make_pair(xy.x, xy.y);
-	if (comp != this->f)
+	if (xy.x != this->f.first * this->th || xy.y != this->f.second * this->th)
 		return;
 
 	this->lvl[this->f.second * this->w + this->f.first] = '.';
