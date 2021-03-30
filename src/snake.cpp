@@ -2,7 +2,7 @@
 
 
 
-void snake::update(const Uint8* key) {
+void snake::update(const Uint8* key, const float delta_time) {
 	if (key[SDL_SCANCODE_UP])
 		dir = 0;
 

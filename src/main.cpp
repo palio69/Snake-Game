@@ -28,8 +28,6 @@ int main(int argc, char* argv[]) {
 
 	const window win = window("Snake Game", W * TW, H * TH);
 
-	int count = 0;
-
 	snake snk = snake(win.get_ren());
 	map tile_map = map(W, H, TW, TH);
 
@@ -48,12 +46,8 @@ int main(int argc, char* argv[]) {
 			if (evn.type == SDL_QUIT)
 				running = false;
 
-		if (++count == 100) {
-			const Uint8* key = SDL_GetKeyboardState(nullptr);
-			snk.update(key);
-			count = 0;
-
-		}
+		const Uint8* key = SDL_GetKeyboardState(nullptr);
+		snk.update(key, delta_time);
 
 		win.clear();
 		win.render(snk, tile_map);

@@ -60,7 +60,7 @@ void window::render(const snake& snk, const map& tile_map) const {
 			y = pos.y;
 
 		src = { 0, 8, 8, 8 };
-		des = { x * tw, y * th, tw, th };
+		des = { x, y, tw, th };
 		SDL_RenderCopy(this->ren, snk.get_spr()->get_img(), &src, &des);
 
 	}

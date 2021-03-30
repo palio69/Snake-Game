@@ -28,6 +28,6 @@ public:
 	vec2f get_pos(unsigned i) const { return this->pos[i]; }
 	unsigned num_pos() const { return this->pos.size(); }
 
-	void update(const Uint8* key);
+	void update(const Uint8* key, const float delta_time);
 
 };
